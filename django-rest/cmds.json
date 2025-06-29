@@ -1,0 +1,6 @@
+{
+    "init": [
+        "pip install django djangorestframework",
+        "django-admin startproject {{workspace_name}}"
+    ]
+}

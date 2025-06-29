@@ -1,0 +1,37 @@
+# -------------------- General -------------------- #
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Celery beat schedule
+celerybeat-schedule
+
+# Sensible data
+*.pem
+*.key
+*.crt
+*.env
+secrets/
+
+# Hermes
+*.hermes.yml
+*.hermes.*.yml
+hermes.*.yml

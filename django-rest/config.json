@@ -1,0 +1,8 @@
+{
+    ".env.dev": ".env.dev",
+    ".env.prod": ".env.prod",
+    ".gitignore": ".gitignore",
+    "dockerfile": "dockerfile",
+    "requirements.txt": "requirements.txt",
+    "settings.py": "'{{workspace_name}}\\settings.py"
+}

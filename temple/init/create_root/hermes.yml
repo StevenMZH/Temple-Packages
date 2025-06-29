@@ -1,0 +1,6 @@
+servers:
+
+	server_id:
+    server_name: server_name
+    server_credentials: .env.hermes
+    env: .env.prod
