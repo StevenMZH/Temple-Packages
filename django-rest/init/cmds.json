@@ -1,9 +1,4 @@
 {
-    ".env.dev": ".env.dev",
-    ".env.prod": ".env.prod",
-    ".gitignore": ".gitignore",
-    ".dockerignore": ".dockerignore",
-    "dockerfile": "dockerfile",
     "requirements.txt": "requirements.txt",
 
     "settings.py": "{{workpace_name}}/{{workpace_name}}/settings.py",
