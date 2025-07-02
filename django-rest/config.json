@@ -6,10 +6,10 @@
     "dockerfile": "dockerfile",
     "requirements.txt": "requirements.txt",
 
-    "settings.py": "{{workspace_name}}/{{workspace_name}}/settings.py",
+    "settings.py": "{{workspace_name}}/settings.py",
 
-    "models.py": "{{workspace_name}}/auth/models.py",
-    "serializers.py": "{{workpace_name}}/auth/serializers.py",
-    "urls.py": "{{workspace_name}}/auth/urls.py",
-    "views.py": "{{workspace_name}}/auth/views.py"
+    "models.py": "auth/models.py",
+    "serializers.py": "auth/serializers.py",
+    "urls.py": "auth/urls.py",
+    "views.py": "auth/views.py"
 }
