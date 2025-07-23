@@ -1,0 +1,15 @@
+# Layouts
+- file: 
+    - "src\\layouts\\Header.jsx"
+    - "src\\layouts\\Footer.jsx"
+  action: create
+  match: ""
+  content: |
+    export function {{file_name}}() {
+        return (
+            <div>
+                
+            </div>
+        );
+    }
+    export default {{file_name}};

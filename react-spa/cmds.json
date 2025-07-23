@@ -1,0 +1,27 @@
+{
+    "init": [
+        "npx create-vite@latest {{workspace_name}} --template react",
+        "cd {{workspace_name}}",
+        "mkdir src\\components",
+        "mkdir src\\features",
+        "mkdir src\\contexts",
+        "mkdir src\\hooks",
+        "mkdir src\\layouts",
+        "mkdir src\\pages",
+        "mkdir src\\services",
+        "mkdir src\\styles",
+        "mkdir src\\i18n",
+
+        "npm install",
+        "npm install react-router-dom" 
+    ],
+
+    "nginx": [
+        ""
+    ],
+
+    "run": [
+        "cd {{workspace_name}}",
+        "npm run dev"
+    ]
+}

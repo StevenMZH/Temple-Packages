@@ -1,0 +1,58 @@
+# urls.py
+- file: "{{workspace_name}}\\urls.py"
+  action: insert_after
+  match: "urlpatterns = \\["
+  content: |
+    # path
+        path('users/', include('user_auth.urls')),
+    
+- file: "{{workspace_name}}\\urls.py"
+  action: replace
+  match: "# path"
+  content: " "
+
+
+# settings.py
+- file: "{{workspace_name}}\\settings.py"
+  action: insert_before
+  match: ""
+  content: from datetime import timedelta
+
+- file: "{{workspace_name}}\\settings.py"
+  action: insert_after
+  match: "# </INSTALLED_APPS>"
+  content: |
+    # user_auth
+        'rest_framework.authtoken',
+        'rest_framework_simplejwt',
+        'rest_framework_simplejwt.token_blacklist',
+
+        'django.contrib.sites',
+        'allauth',
+        'allauth.account',
+        'allauth.socialaccount',
+        'allauth.socialaccount.providers.google',
+        'allauth.socialaccount.providers.github',
+        'dj_rest_auth',
+        'dj_rest_auth.registration',
+        
+        'user_auth',
+
+- file: "{{workspace_name}}\\settings.py"
+  action: insert_after
+  match: "'django.middleware.security.SecurityMiddleware',"
+  content: |
+    # user_auth
+        'corsheaders.middleware.CorsMiddleware',
+
+- file: "{{workspace_name}}\\settings.py"
+  action: insert_after
+  match: "'django.contrib.auth.middleware.AuthenticationMiddleware',"
+  content: |
+    # user_auth
+        'allauth.account.middleware.AccountMiddleware',
+
+- file: "{{workspace_name}}\\settings.py"
+  action: replace
+  match: "# user_auth"
+  content: ""

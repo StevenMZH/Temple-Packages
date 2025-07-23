@@ -1,0 +1,20 @@
+- file: "etc\\nginx\\sites-available\\myproject.conf"
+  action: insert_after
+  match: "# <nginx_server>"
+  content: |
+    # react
+        listen 80;
+        server_name {{server_direction}}; 
+
+        root /var/www/{{workspace_name}}/build;
+        index index.html;
+
+        location / {
+            try_files $uri /index.html;
+        }
+    
+- file: "etc\\nginx\\sites-available\\myproject.conf"
+  action: replace
+  match: "# react"
+  content: ""
+

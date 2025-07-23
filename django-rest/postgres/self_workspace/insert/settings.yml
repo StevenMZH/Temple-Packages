@@ -1,0 +1,24 @@
+- file: "{{workspace_name}}\\settings.py"
+  action: replace
+  match: "DATABASES = {\\n.*?\\n}"
+  content: |
+    # postgre
+    if DEBUG:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': env('POSTGRES_DB'),
+                'USER': env('POSTGRES_USER'),
+                'PASSWORD': env('POSTGRES_PASSWORD'),
+                'HOST': env('POSTGRES_HOST', default='localhost'),
+                'PORT': env('POSTGRES_PORT', default='5432'),
+            }
+        }
+

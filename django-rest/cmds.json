@@ -1,11 +1,30 @@
 {
     "init": [
+        "pip install django Django",
         "pip install django djangorestframework",
+        "pip install drf-spectacular",
         "django-admin startproject {{workspace_name}}"
     ],
-    "auth": [
-        "python manage.py startapp auth"
+    "user_auth": [
+        "cd {{workspace_name}}",
+        "python manage.py startapp user_auth"
     ],
-    "postgre": [
+    "postgres": [
+        ""
+    ],
+    "nginx":[
+        ""
+    ],
+
+
+    "run": [
+        "cd {{workspace_name}}",
+        "python manage.py runserver"
+    ],
+    "full_run": [
+        "cd {{workspace_name}}",
+        "python manage.py makemigrations",
+        "python manage.py migrate",
+        "python manage.py runserver"
     ]
 }

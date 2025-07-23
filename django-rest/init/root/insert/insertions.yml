@@ -1,0 +1,21 @@
+- file: "docker-compose.yml"
+  action: insert_before
+  match: "# </services>"
+  content: |
+    # {{workspace_name}}
+      {{workspace_name}}:
+        build: ./{{workspace_name}}
+        container_name: "{{workspace_name}}"
+        command: gunicorn {{workspace_name}}.wsgi:application --bind 0.0.0.0:8000
+        ports:
+          - "8000:8000"
+        env_file:
+          - .env.prod
+        depends_on:
+        restart: always
+
+- file: "docker-compose.yml"
+  action: replace
+  match: |
+    # {{workspace_name}}
+  content: ""

@@ -1,0 +1,20 @@
+- file: "docker-compose.yml"
+  action: insert_before
+  match: "# </services>"
+  content: |
+    # react
+        {{workspace_name}}:
+          build: ./{{workspace_name}}
+          container_name: {{workspace_name}}
+          volumes:
+            - ./nginx/www/{{workspace_name}}:/build   
+          command: ""  
+          depends_on:
+            - {{workspace_backend}}
+          restart: on-failure
+    
+- file: "docker-compose.yml"
+  action: replace
+  match: "# react"
+  content: ""
+    

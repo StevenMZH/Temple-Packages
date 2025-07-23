@@ -1,0 +1,27 @@
+{
+    "init": [
+        "mkdir -p /etc/nginx",
+        "cd /etc/nginx",
+
+        "touch nginx.conf",
+
+        "mkdir -p sites-available",
+        "mkdir -p sites-enabled",
+        "mkdir -p conf.d",
+        "mkdir -p snippets",
+
+        "touch sites-available/myproject.conf",
+
+        "if [ ! -e sites-enabled/myproject.conf ]; then ln -s ../sites-available/myproject.conf sites-enabled/myproject.conf; fi"
+    ],
+
+    "ssl": [
+        "hermes run_serverside 'sudo apt update'",
+        "hermes run_serverside 'sudo apt install certbot python3-certbot-nginx'",
+        "hermes run_serverside 'sudo certbot --nginx -d {{domain}} -d www.{{domain}}'"
+    ],
+
+    "https": [
+        ""
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "main.jsx": "src\\main.jsx",
+    "index.css": "src\\index.css",
+    "App.jsx": "src\\App.jsx",
+    "App.css": "src\\App.css",
+
+    "normalize.css": "src\\styles\\normalize.css",
+    "themes.css": "src\\styles\\themes.css",
+
+    "MainLayout.jsx": "src\\layouts\\MainLayout.jsx",
+    "AppProvider.jsx": "src\\AppProvider.jsx",
+    
+    "logo.svg": "public\\logo.svg",
+
+    "workspace_backend": "backend"
+
+}

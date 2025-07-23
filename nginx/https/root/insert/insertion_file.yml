@@ -1,0 +1,31 @@
+- file: "etc\\nginx\\sites-available\\myproject.conf"
+  action: insert_after
+  match: "# <nginx_server>"
+  content: |
+    # https
+        listen 443 ssl;
+        server_name midominio.com www.midominio.com;
+
+        # Certificados SSL generados por Certbot
+        ssl_certificate /etc/letsencrypt/live/midominio.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/midominio.com/privkey.pem;
+        include /etc/letsencrypt/options-ssl-nginx.conf;
+        ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+- file: "etc\\nginx\\sites-available\\myproject.conf"
+  action: insert_before
+  match: "server {\\n# <nginx_server>"
+  content: |
+    # https
+        server {
+            listen 80;
+            server_name midominio.com www.midominio.com;
+
+            return 301 https://$host$request_uri;
+        }
+
+- file: "etc\\nginx\\sites-available\\myproject.conf"
+  action: replace
+  match: "# https"
+  content: ""
+

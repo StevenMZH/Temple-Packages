@@ -1,0 +1,4 @@
+# Deletes
+- file: 
+    - "public\\vite.svg"
+  action: delete
