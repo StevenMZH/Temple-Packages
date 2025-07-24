@@ -4,6 +4,12 @@
     "App.jsx": "src\\App.jsx",
     "App.css": "src\\App.css",
 
+    "Landing.jsx": "src\\pages\\Landing.jsx",
+    "Card.jsx": "src\\components\\Card.jsx",
+    "Grid.jsx": "src\\components\\Grid.jsx",
+    "ThemeSwitch.jsx": "src\\components\\ThemeSwitch.jsx",
+
+
     "normalize.css": "src\\styles\\normalize.css",
     "themes.css": "src\\styles\\themes.css",
 
@@ -11,6 +17,7 @@
     "AppProvider.jsx": "src\\AppProvider.jsx",
     
     "logo.svg": "public\\logo.svg",
+    "default.jpg": "public\\default.jpg",
 
     "workspace_backend": "backend"
 

@@ -1,6 +1,6 @@
 {
     "init": [
-        "npx create-vite@latest {{workspace_name}} --template react",
+        "npm create vite@latest {{workspace_name}} -- --template react --yes",
         "cd {{workspace_name}}",
         "mkdir src\\components",
         "mkdir src\\features",

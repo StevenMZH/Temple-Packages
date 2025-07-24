@@ -1,4 +1,5 @@
 # Deletes
 - file: 
     - "public\\vite.svg"
+    - "src\\assets\\react.svg"
   action: delete
